@@ -7,7 +7,7 @@ export async function obtenerToken(user, password) {
         user: user,
         password: password
     }
-    const data = await axios.post(URL, parametros).then(response => response.data);
+    const data = await axios.post(`${URL}/?user=${user}&password=${password}`).then(response => response.data);
     localStorage.setItem("token", data.token);
     
     const token = localStorage.getItem("token");

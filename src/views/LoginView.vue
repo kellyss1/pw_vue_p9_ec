@@ -1,8 +1,8 @@
 <template>
   
-  <div>
+  <div class="formulario">
     <h2>Token</h2>
-    <form @submit.prevent="login">
+    <form @submit.prevent="ingresar">
         <div>
             <label for="token">Token</label>
             <input v-model="token" id="token" type="text" required>
@@ -19,7 +19,7 @@
             <label for="role">Role</label>
             <input v-model="role" id="role" type="text" required>
         </div>
-        <button type="submit" @click="ingresar">Ingresar</button>
+        <button type="submit">Ingresar</button>
     </form>
   </div>
 </template>
@@ -48,6 +48,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
 </style>
